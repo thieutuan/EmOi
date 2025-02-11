@@ -3,52 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Em ơiii Anh mún hỏi ? ❤️</title>
-    <style>
-        body {
-            text-align: center;
-            font-family: Arial, sans-serif;
-            background-color: pink;
-        }
-        h1 {
-            color: red;
-        }
-        .buttons {
-            margin-top: 20px;
-        }
-        .btn {
-            font-size: 20px;
-            padding: 10px 20px;
-            margin: 10px;
-            cursor: pointer;
-            border-radius: 10px;
-        }
-        .yes {
-            background-color: lightgreen;
-        }
-        .no {
-            background-color: lightcoral;
-            position: absolute;
-        }
-    </style>
+    <title>Mập Mún Hỏi Em  ❤️</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>Em có yêu Mâpj hemm ? 💖</h1>
+    <h1>Em yêu, có yêu Mập nhiều hông ???  💖</h1>
     <img src="https://source.unsplash.com/400x300/?love,couple" alt="Love Image">
     
     <div class="buttons">
-        <button class="btn yes" onclick="alert('Anh biết em sẽ đồng ý mà! 😍')">Có</button>
-        <button class="btn no" id="noBtn">Không</button>
+        <button class="btn yes" onclick="acceptLove()">Có ❤️</button>
+        <button class="btn no" id="noBtn">Không 😢</button>
     </div>
 
+    <audio id="music" autoplay loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mp3">
+    </audio>
+
     <script>
+        // Nút "Không" chạy trốn
         const noBtn = document.getElementById("noBtn");
         noBtn.addEventListener("mouseover", function() {
             noBtn.style.position = "absolute";
             noBtn.style.left = Math.random() * window.innerWidth + "px";
             noBtn.style.top = Math.random() * window.innerHeight + "px";
         });
+
+        // Khi nhấn "Có"
+        function acceptLove() {
+            alert('Anh biết em sẽ yêu Mập mà! 😍');
+        }
+
+        // Tạo hiệu ứng trái tim bay
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.style.left = Math.random() * window.innerWidth + "px";
+            heart.style.top = "100vh";
+            document.body.appendChild(heart);
+            setTimeout(() => {
+                heart.remove();
+            }, 3000);
+        }
+        setInterval(createHeart, 300);
     </script>
 
 </body>
