@@ -29,11 +29,6 @@ h1 {
         padding: 10px 18px;
     }
 }
-img {
-    width: 100%;
-    max-width: 400px; /* Giới hạn tối đa */
-    height: auto;
-}
 
 /* Hiệu ứng trái tim bay */
 .heart {
